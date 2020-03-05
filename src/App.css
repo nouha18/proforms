@@ -3,14 +3,24 @@
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+margin:40px;
+padding-top:10px;
+height: 20vmin;
+border-radius: 18px;
+/*pointer-events: painted;*/
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.card-box{
+  position: relative;
+  border-radius: 5%;
+  top:1rem;
+  left:60%;
+  width:30rem;
+  height:25rem;
+  z-index:90;
+  background: #333;
+  backdrop-filter: blur(0.5);
+  perspective: 1000;
 }
 
 .App-header {
@@ -27,12 +37,194 @@
 .App-link {
   color: #61dafb;
 }
+input {
+  position: relative;
+  top:20px;
+  width:300px;
+  border:1px solid #C0C0C0;
+  border-radius: 15px;
+  padding-left: 10px;
+  border-bottom: 2px solid #798081;
+  height: 40px;
+  margin:30px 40px 18px 20px;
+}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button {
+  position: relative;
+  top:0px;
+  border-radius:15px;
+  border-top: 2px solid #61dafb;
+  border-left: 2px solid #61dafb;
+  margin:10px 40px 8px 30%;
+  height:35px;
+  width:150px;
+  color:#333;
+  font-weight: 300;
+  font-family: consolinas;
+  font-size: 1.5em;
+}
+button:hover{
+  background: linear-gradient(45deg,#61dafb, #C0C0C0 );
+}
+div.form-box{
+  display: flex;
+  flex-direction: column;
+  width:30rem;
+  height:24rem;
+  left:30%;
+  position: relative;
+  top:-25rem;
+  border-radius: 5%;
+  background: #DCDCDC;
+  perspective: 100;
+  transform-style: preserve-3d;
+  animation: App-move 6s;
+  transform-origin: right;
+}
+
+@keyframes App-move{
+  0% {
+    opacity: 0;
+    transform: translateX(90%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    transform: translateX(-1%);
   }
+}
+
+div.box-card{
+  position:absolute;
+  display: flex;
+  align-content: center;
+  top:40px;
+  left:40%;
+  width:25rem;
+  height:auto;
+  overflow:hidden;
+  background:#c0c0c0;
+  }
+
+  div.head-card{
+    position: absolute;
+    margin:0;
+    padding:0;
+    height:50px;
+    width:99%;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    background:#f0f;
+    color:#fff;
+  }
+  span.num-cards{
+    margin-left:5px;
+    height:24px;
+    width:30px;
+    font-size:2ch;
+    font-family: fantasy;
+    font-weight: 600;
+    padding:9px 5px 10px 5px;
+    z-index:50;
+    align-content: center;
+    margin-top:-5px;
+    margin-right: 10px;
+    border: 2px solid #fff;
+    background:#f0f;
+    box-shadow: 5px 5px 4px #484848;
+    }
+
+  span.num-cards:before{
+  content:'';
+   width: 20px;
+   height: 18px;
+   position: absolute;
+   top:35px;
+   left:2.5%;
+    margin-right: 10px;
+   z-index:50;
+   z-index:50;
+   background: #f0f;
+   border-bottom: 2px solid #fff;
+   border-left: 2px solid #fff;
+   box-shadow: 0 2px 0 #484484;
+   transform: skewY(25deg);
+    }
+    span.num-cards:after{
+      content: '';
+     width: 20px;
+     height: 18px;
+     position: absolute;
+     top:35px;
+     z-index:50;
+     left: 7.8%;
+     background: #f0f;
+     border-bottom: 2px solid #fff;
+     border-right: 2px solid #fff;
+     box-shadow: 0 2px 0 #484848;
+     transform: skewY(-25deg);
+      }
+div.content-card{
+  position: relative;
+  margin-top:3.2rem;
+  margin-bottom: 2rem;
+  overflow: visible;
+  align-content: space-around;
+  padding:14px 10px 10px 10px;
+  height: auto;
+}
+
+img.icon-card{
+  width:35px;
+  height:35px;
+  float:right;
+  padding: 4px 5px -80px 3px;
+}
+
+@media screen and (max-width:500px) {
+  div.box-card{
+    display: flex;
+    border-radius: 15px;
+    flex-direction: row;
+    align-content: center;
+    top:30px;
+    padding-right: 50px;
+    margin:10px 10px 20px 5px;
+    width:420px;
+    left:1%;
+    height:auto;
+    overflow:hidden;
+    background:#c0c0c0;
+    }
+    span.num-cards:before{
+    content:'';
+     width: 20px;
+     height: 18px;
+     position: absolute;
+     top:35px;
+     left:2.1%;
+      margin-right: 10px;
+     z-index:50;
+     z-index:50;
+     background: #f0f;
+     border-bottom: 2px solid #fff;
+     border-left: 2px solid #fff;
+     box-shadow: 0 2px 0 #484484;
+     transform: skewY(25deg);
+      }
+      span.num-cards:after{
+        content: '';
+       width: 20px;
+       height: 18px;
+       position: absolute;
+       top:35px;
+       z-index:50;
+       left: 6.9%;
+       background: #f0f;
+       border-bottom: 2px solid #fff;
+       border-right: 2px solid #fff;
+       box-shadow: 0 2px 0 #484848;
+       transform: skewY(-25deg);
+        }
 }
