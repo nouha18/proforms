@@ -1,5 +1,11 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+
+    ![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=nouha18&show_icons=true&theme=cobalt)
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
